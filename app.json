@@ -5,6 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "scheme": "myapplearn",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -28,6 +29,9 @@
       "eas": {
         "projectId": "3991adf1-99a0-43cd-911f-87dbc5b871fe"
       }
-    }
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
