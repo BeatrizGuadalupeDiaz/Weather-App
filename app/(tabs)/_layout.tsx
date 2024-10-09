@@ -1,5 +1,6 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Tabs } from "expo-router";
+import React from "react";
 
 export default function TabLayout() {
   type TabProps = {
@@ -28,8 +29,8 @@ export default function TabLayout() {
               iconName = "cog";
               break;
             case "[user]":
-                iconName = "user";
-                break;
+              iconName = "user";
+              break;
             default:
               iconName = "circle";
               break;
@@ -62,14 +63,8 @@ export default function TabLayout() {
         options={{
           title: "User",
           href: "/juan Perez",
-          /* href: {
-            pathname: '/[user]',
-            params: {
-              user: 'evanbacon',
-            },
-          }, */
         }}
-        />
+      />
     </Tabs>
   );
 }

@@ -1,57 +1,21 @@
-import { Link, router, Stack } from "expo-router";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Pressable,
-  Image,
-} from "react-native";
-
-//componente de imagen
-function LogoTitle() {
-  return (
-    <>
-    <Image style={styles.image} source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }} />
-    <Text>Home</Text>
-    </>
-  );
-}
+import { Link } from "expo-router";
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import { useSelector } from "react-redux";
+import { RootState } from "../utils/app/store";
 
 export default function HomeScreen() {
-    const id = '12345';
-
+  const count = useSelector((state: RootState) => state.counter.value);
   return (
     <View style={styles.container}>
-      {/* <Stack.Screen
-        options={{
-          title: 'My home',
-          headerStyle: { backgroundColor: '#f4511e' },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-
-          },
-         headerTitle: () => <LogoTitle />,
-         headerRight: () => <Pressable onPress={() => router.navigate('/user/[id]')}><Text>User</Text></Pressable>
-        }}
-      />
-
-      <Text>Home</Text>
-      <Link href="/details">Ir a details con Link</Link>
-      <Pressable onPress={()=> router.navigate('./other')}>
-        <Text>ir a Other con btn-navigation</Text>
-      </Pressable>
-      <Link
-        href={{
-          pathname: '/user/[id]',
-          params: { id: 'bacon' },
-        }}>
-        View user details - params whith Link
+      <Text style={styles.text}>Puntuaje de la app</Text>
+      <Text style={[styles.text, styles.textRaiting]}>{count}</Text>
+      <Link href="/(tabs)" style={styles.text}>
+        Go to Whater
       </Link>
-    <Pressable onPress={() => router.navigate(`/user/${id}`)}>
-      <Text>Pressable user - params with navigate</Text>
-    </Pressable> */}
-    <Link href="/(tabs)" style={styles.text}>Go to Whater</Link>
+      <Link href="/counter" style={styles.text}>
+        Go to Raiting
+      </Link>
     </View>
   );
 }
@@ -68,6 +32,8 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 20,
-
+  },
+  textRaiting: {
+    marginBottom: 20,
   },
 });
