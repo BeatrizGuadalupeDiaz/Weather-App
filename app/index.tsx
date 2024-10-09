@@ -22,7 +22,7 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <Stack.Screen
+      {/* <Stack.Screen
         options={{
           title: 'My home',
           headerStyle: { backgroundColor: '#f4511e' },
@@ -50,8 +50,8 @@ export default function HomeScreen() {
       </Link>
     <Pressable onPress={() => router.navigate(`/user/${id}`)}>
       <Text>Pressable user - params with navigate</Text>
-    </Pressable>
-    <Link href="/(tabs)">Go to tabs</Link>
+    </Pressable> */}
+    <Link href="/(tabs)" style={styles.text}>Go to Whater</Link>
     </View>
   );
 }
@@ -65,5 +65,9 @@ const styles = StyleSheet.create({
   image: {
     width: 50,
     height: 50,
+  },
+  text: {
+    fontSize: 20,
+
   },
 });
